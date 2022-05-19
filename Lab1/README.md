@@ -1,3 +1,5 @@
-# seg3503_playground
+# seg3503_playground - Lab 1
 
-Répertoire a Noah Thompson pour les lab pour le cours seg3503
+Noah Thomspon - 300165834
+
+
