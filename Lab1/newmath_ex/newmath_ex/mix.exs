@@ -5,7 +5,7 @@ defmodule NewmathEx.MixProject do
     [
       app: :newmath_ex,
       version: "0.1.0",
-      elixir: "~> 1.11",
+      #elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
