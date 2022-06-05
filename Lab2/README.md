@@ -1,3 +1,7 @@
+# seg3503_playground - Lab 2
+
+Noah Thomspon - 300165834
+
 Cas de Test | Résultats Escomptés | Résultats Actuels | Verdict (Succès, Échec, Non-concluant) 
 --- | --- | --- | --- 
 1 | demande d'inscription acceptée | Err4: Wrong FirstName format, Err5: Wrong LastName format | Échec
