@@ -194,4 +194,11 @@ class DateTest {
     Date expectedTomorrow = new Date(2001, 3, 1);
     assertEquals(expectedTomorrow, today.nextDate());
   }
+  
+  @Test
+  void equalsTest2() {
+    Date today = new Date(2001, 2, 28);
+    Date expectedTomorrow = new Date(2001, 3, 1);
+    assertEquals(expectedTomorrow, today.nextDate());
+  }
 }

@@ -46,18 +46,12 @@ public class Date {
 		if (day < 1 || day > 31) {
 			throw new IllegalArgumentException("day must greater or equal to 1 or less or equal to 31.");
 		}
-		/**if (day > 31){
-			throw new IllegalArgumentException("day must less or equal to 31.");
-		}**/
 		if (isThirtyDayMonth() && day > 30) {
 			throw new IllegalArgumentException("day must less than 30 for month " + monthNames[month-1]);
 		}
 		if (this.month == 2 && ((isLeapYear() && day > 29) || (!isLeapYear() && day > 28))) {
 			throw new IllegalArgumentException("day must less than 29 for month " + monthNames[month-1] + " on a leap year.");
 		}
-		/**if (this.month == 2 && !isLeapYear() && day > 28) {
-			throw new IllegalArgumentException("day must less than 28 for month " + monthNames[month-1] + " on a non leap year.");
-		}**/
 		this.day = day;
 	}
 
@@ -87,8 +81,11 @@ public class Date {
 	 *
 	 */
 	public Date nextDate() {
+		boolean leap = isLeapYear();
 		int nextYear = year, nextMonth = month, nextDay = day + 1;
-		if (isEndOfMonth()) {
+		if (day == 31 || (day == 30 && isThirtyDayMonth()) ||
+				(this.month == 2 && ((day == 29 && leap) ||
+						(day == 28 && !leap)))) {
 			nextDay = 1;
 			if (month == 12) {
 				nextYear++;
@@ -104,14 +101,14 @@ public class Date {
 	 *
 	 * Check if the date is a end of a month.
 	 */
-	private boolean isEndOfMonth() {
+	/**private boolean isEndOfMonth() {
 		boolean leap = isLeapYear();
 		if (day == 31 || (day == 30 && isThirtyDayMonth()) ||
 				(this.month == 2 && ((day == 29 && leap) ||
 						(day == 28 && !leap))))
 			return true;
 		else return false;
-	}
+	}**/
 
 	/**
 	 * returns true if month has 30 days.
@@ -140,9 +137,6 @@ public class Date {
 	public boolean equals(Object obj) {
 		if (! (obj instanceof Date)) return false;
 		Date od = (Date)obj;
-		return year == od.getYear()
-				&& month == od.getMonth() 
-				&& day == od.getDay();
+		return (year == od.getYear() && month == od.getMonth() && day == od.getDay());
 	}
-
 }
