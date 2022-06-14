@@ -35,7 +35,10 @@ public class DateExceptionTest {
 		params.add(new Integer[] {1500,	02,	29,	0,0,0});
 		params.add(new Integer[] {-1,	10,	20,	0,0,0});
 		params.add(new Integer[] {1458,	15,	12,	0,0,0});
-		params.add(new Integer[] {1975, 6,-50,0,0,0});
+		params.add(new Integer[] {1975, 6,-50, 0,0,0});
+		params.add(new Integer[] {2002, 05, 47, 0,0,0});
+		params.add(new Integer[] {2002, 06, 31, 0,0,0});
+		params.add(new Integer[] {2000, 2, 30, 0,0,0});
 		return params;
 	}
 

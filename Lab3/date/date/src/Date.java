@@ -107,7 +107,8 @@ public class Date {
 	private boolean isEndOfMonth() {
 		boolean leap = isLeapYear();
 		if (day == 31 || (day == 30 && isThirtyDayMonth()) ||
-				(this.month == 2 && ((day == 29 && leap) || (day == 28 && !leap))))
+				(this.month == 2 && ((day == 29 && leap) ||
+						(day == 28 && !leap))))
 			return true;
 		else return false;
 	}
@@ -139,7 +140,9 @@ public class Date {
 	public boolean equals(Object obj) {
 		if (! (obj instanceof Date)) return false;
 		Date od = (Date)obj;
-		return year == od.getYear() && month == od.getMonth()  && day == od.getDay();
+		return year == od.getYear()
+				&& month == od.getMonth() 
+				&& day == od.getDay();
 	}
 
 }

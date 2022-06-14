@@ -148,5 +148,50 @@ class DateTest {
       () -> new Date(1975, 6, -50)
     );
   }
-
+  
+  @Test
+  void nextDate_invalid_tc21() {
+    assertThrows(
+      IllegalArgumentException.class,
+      () -> new Date(1458, -1, 12)
+    );
+  }
+  
+  @Test
+  void stringTest() {
+	  Date today = new Date(3456, 12, 31);
+	  String dateAsString = "3456/December/31";
+	  assertEquals(dateAsString, today.toString());
+  }
+  
+  @Test
+  void notEqualsTest() {
+	  Date today = new Date(1234, 4, 12);
+	  String dateAsString = "3456/December/31";
+	  assertFalse(today.equals(dateAsString));
+  }
+  
+  @Test
+  void equalsTest() {
+	  Date d1 = new Date(2202, 5, 07);
+	  Date d2 = new Date(2202, 5, 07);
+	  d1.equals(d1);
+	  assertTrue(d1.equals(d1));
+	  d2.equals(d1);
+	  d2.equals(d2);
+  }
+  
+  @Test
+  void leapEndOfMonth() {
+    Date today = new Date(2000, 2, 29);
+    Date expectedTomorrow = new Date(2000, 3, 1);
+    assertEquals(expectedTomorrow, today.nextDate());
+  }
+  
+  @Test
+  void notLeapEndOfMonth() {
+    Date today = new Date(2001, 2, 28);
+    Date expectedTomorrow = new Date(2001, 3, 1);
+    assertEquals(expectedTomorrow, today.nextDate());
+  }
 }
