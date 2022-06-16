@@ -1,20 +1,26 @@
-# seg3503_playground - Lab 2
+# seg3503_playground - Lab 3
 
 Noah Thomspon - 300165834
 
-Cas de Test | Résultats Escomptés | Résultats Actuels | Verdict (Succès, Échec, Non-concluant) 
---- | --- | --- | --- 
-1 | demande d'inscription acceptée | Err4: Wrong FirstName format, Err5: Wrong LastName format | Échec
-2 | demande d'inscription acceptée | Err1: Wrond UserName format, Err3: Size myst be between 6 and 12 | Échec
-3 | demande d'inscription acceptée | Err4: Wrong FirstName format, Err5: Wrong LastName format | Échec
-4 | demande d'inscription acceptée | Congratulations Bond James!. You are now a member of our site.. | Succès
-5 | Err1 | Err1: Wrong UserName format, Err3 Size of UserName must be between 6 and 12, Err4 Wrong FirstName format, Err5 Wrong LastName format, Err6 Failed to convert property value of type java.lang.String to required type java.lang.Integer for property age; nested exception is java.lang.NumberFormatException: For input string: "+@-.AA" | Échec
-6 | Err1 | Err1: Wrong UserName format, Err3 Size of UserName must be between 6 and 12, Err6 Wrong Email format, Err6 Failed to convert property value of type java.lang.String to required type java.lang.Integer for property age; nested exception is java.lang.NumberFormatException: For input string: "zzZZz.zz999@zzz.zzzz99999zzzzzzz.zzzzzzz9999zzzzz.zzzzzz" | Échec
-7 | Err1 | Err3: Size of Username must be between 6 and 12, Err4: Wrong FirstName format, Err5: Wrong LastName format | Échec
-8 | Err1 | Err1: Wrong UserName format | Succès
+### Partie 1 - Computation
+   Les ligne en rouge ne sont jaimais verrifier, les linge en jaune sont partiellement verifier et les ligne en vert sont completement verrifier.
+   
+   
+    
+### Partie 2 - Date Coverage
+   En ajoutant des test j'ai peu recevoir 99.4% des test verifier
+   
+   ![image](https://user-images.githubusercontent.com/71086250/173625743-d5634150-52ad-46d7-b89b-7b354ebaf725.png)
+   
+   Il manque du coverage au fonction equals et nais pas certain comment le couvrire au complet.
+   
+   ![image](https://user-images.githubusercontent.com/71086250/173626027-e6979a25-9a55-4630-9d7c-4d7016dd91d6.png)
+   
+   
 
-![image](https://user-images.githubusercontent.com/71086250/172060843-f9dae1ce-52e2-4d15-aa82-5b1c4804d4ce.png)
-
-![image](https://user-images.githubusercontent.com/71086250/172060886-c5292e88-45b8-48e9-b0ca-abbdf332e7f2.png)
-
-![image](https://user-images.githubusercontent.com/71086250/172060923-cebab44e-2a17-4d55-87f5-4cd1d06b506d.png)
+### Partie 3 - Date Refactorisation
+   En migrant des ligne et enlevant des fonction utiliser une fois, le code est plus simple et moin long
+   
+   ![image](https://user-images.githubusercontent.com/71086250/173626293-ecafaca8-a584-4a26-a309-6f05ba0e0b29.png)
+   
+   Le coverage n'a pas changer comme toute les meme fonction sont pressente et les test au rester la meme.
