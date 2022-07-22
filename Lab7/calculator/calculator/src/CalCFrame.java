@@ -34,12 +34,12 @@ class CalCFrame extends JFrame implements ActionListener
                       num1 = 0.0, 
                       num2 = 0.0, 
                       num3 = 0.0;
-  private final int   ADD=1,        // integer constants representing operators
-                      SUB = 2, 
-                      MULT = 3, 
-                      DIVI = 4, 
-                      POW = 5, 
-                      SQRT = 6;
+  private final int   static ADD=1,        // integer constants representing operators
+                      static SUB = 2, 
+                      static MULT = 3, 
+                      static DIVI = 4, 
+                      static POW = 5, 
+                      static SQRT = 6;
  private boolean      firstpress = true,  //determines first button press
                       morenums = false,   //"" if more numbers are being pressed
                       equals = false,     //"" if equal button has been pressed
@@ -261,7 +261,7 @@ public void processNumbers() {
       equals = false;   // equals is set to false to allow additional input    
   } // end if    
     else 
-      num1 = Double.valueOf( input ).doubleValue();  // converts a string number to double
+      num1 = Double.valueOf( input );  // converts a string number to double
      
       oldoper =  oper;                  // store current operator to oldoper
       
@@ -278,7 +278,7 @@ public void processNumbers() {
     // be calculated
     else if ( !morenums ) {      
      
-      num2 = Double.valueOf( input ).doubleValue();           //converts second num to double
+      num2 = Double.valueOf( input );           //converts second num to double
       answer = calculate( oldoper, num1, num2 ); //calculate num1 and num2 with   
       showAnswer( Double.toString( answer) );   //the past operator
       newoper = oper;                            //store current operator to
