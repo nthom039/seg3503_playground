@@ -73,14 +73,6 @@ public CalCFrame(String title) {
     
     if ( i <= 2 )
         getContentPane().add( buttons[i] );
-    else if ( i >= 3 && i <= 7)
-        getContentPane().add( buttons[i] );
-    else if ( i >=8 && i <= 12 )
-        getContentPane().add( buttons[i] );
-    else if ( i >= 13 && i <= 17 )
-        getContentPane().add( buttons[i] );
-    else
-        getContentPane().add( buttons[i] );
        
     if ( i == 2 )
         getContentPane().add( new JLabel( "  " ) );
@@ -370,7 +362,7 @@ public void showAnswer( String s )
 //value.  If doubleclick is true, the program ignores the input
 //==============================================================================
 public boolean clickCheck( String s ) {
-  if ( s == "" )
+  if ( s.equals("") )
     doubleclick = true;
   else 
     doubleclick = false;
